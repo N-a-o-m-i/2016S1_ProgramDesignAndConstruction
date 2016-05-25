@@ -1,9 +1,13 @@
 package mathquiz;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -26,7 +30,7 @@ public class QuizMain
         
     }
     
-    public void getUsers(String fn)
+    public void getUsers(String fn) 
     {
         FileInputStream fIn;
         try
@@ -38,18 +42,18 @@ public class QuizMain
             {
                 String line = fileScanner.nextLine();
                 StringTokenizer st = new StringTokenizer(line);
-                User u = new User(st.nextToken(), );
-                
-                
+                User u = new User(st.nextToken(), Integer.parseInt(st.nextToken()));
+                this.users.put(u.userName, u);
             }
-            
-            
+            fIn.close();
         }
-        catch()
+        catch(FileNotFoundException e)
         {
-            
+            Logger.getLogger(QuizMain.class.getName()).log(Level.SEVERE, null, e);
         }
-        
+        catch(IOException e)
+        {
+            Logger.getLogger(QuizMain.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
-    
 }
