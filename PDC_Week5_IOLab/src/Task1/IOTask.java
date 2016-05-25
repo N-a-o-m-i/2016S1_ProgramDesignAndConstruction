@@ -10,17 +10,22 @@ import java.io.IOException;
  *
  * @author Naomi
  */
-public class IOTask {
+public class IOTask 
+{
 
-    public IOTask(){
-    
+    public IOTask()
+    {
+        
     }
     
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args) 
+    {
+        try
+        {
+            //Create a buffered read and write
             BufferedReader br = new BufferedReader(new FileReader("input.txt"));
             BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"));
-            //create a variable to store a line
+            //Create a variable to store a line
             String line = "";
             while((line = br.readLine()) != null)
             {
@@ -29,14 +34,14 @@ public class IOTask {
                 //Convert it to a proper char array
                 chars = line.toCharArray();
                 //Cycle through the array in reverse order
-                for(int i = line.length() - 1; i >= 0; i--)
+                for(int i=line.length()-1; i>=0; i--)
                 {
                     char currentChar = line.charAt(i);
-                    //check if the current character is a letter
+                    //Check if the current character is a letter
                     if(Character.isLetter(currentChar))
                     {
                         chars[i] = line.charAt(i);
-                        //write the character to output reader
+                        //write the character to output file
                         bw.append(Character.toUpperCase(chars[i]));
                     }
                 }
@@ -44,9 +49,10 @@ public class IOTask {
                 bw.newLine();
             }
             bw.close();
-        } catch (IOException e) {
-            System.err.println("IOException Error: " + e.getMessage());
         }
+        catch(IOException e)
+        {
+            System.err.println("IOException Error: " + e.getMessage());
+        }   
     }
-    
 }
