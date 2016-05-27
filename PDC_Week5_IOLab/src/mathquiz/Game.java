@@ -34,7 +34,7 @@ public class Game
         //Ask questions, check the answers and calculate the scores
         for(QuizQuestion question : this.questions)
         {
-            System.out.println(question.num1 + " " + question.mathOp + " " + question.num2 + "=?");
+            System.out.println(question.num1 + " " + question.mathOp + " " + question.num2 + "= ?");
             do
             {
                 answer = sc.nextLine();

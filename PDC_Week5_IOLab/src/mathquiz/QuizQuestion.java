@@ -11,7 +11,6 @@ public class QuizQuestion
     //private static int count;
     public int num1 = 0;
     public int num2 = 0;
-    
     public String mathOp;
     public double answer = 0;
     
