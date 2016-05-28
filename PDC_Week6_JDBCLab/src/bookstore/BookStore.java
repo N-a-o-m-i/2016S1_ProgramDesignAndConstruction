@@ -111,14 +111,19 @@ public class BookStore
                     String sqlDropTable = "DROP TABLE " + newTableName;
                     dropStatement = conn.createStatement();
                     dropStatement.executeUpdate(sqlDropTable);
-                    System.out.println("stable deleted");
+                    System.out.println("table deleted");
                 }
-                
-                
             }
-            
+            if(rsDBMeta != null)
+            {
+                rsDBMeta.close();
+            }
+            if(dropStatement != null)
+            {
+                dropStatement.close();
+            }
         }
-        catch()
+        catch(SQLException e)
         {
         }
     }
