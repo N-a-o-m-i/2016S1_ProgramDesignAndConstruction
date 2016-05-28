@@ -109,9 +109,9 @@ public class BookStore
                 {
                     System.out.println(tableName + " needs to be deleted");
                     String sqlDropTable = "DROP TABLE " + newTableName;
-                    
-                    
-                    
+                    dropStatement = conn.createStatement();
+                    dropStatement.executeUpdate(sqlDropTable);
+                    System.out.println("stable deleted");
                 }
                 
                 
