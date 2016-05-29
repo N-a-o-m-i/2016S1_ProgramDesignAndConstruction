@@ -1,0 +1,90 @@
+run:
+check existing tables...
+found: SYSALIASES
+found: SYSCHECKS
+found: SYSCOLPERMS
+found: SYSCOLUMNS
+found: SYSCONGLOMERATES
+found: SYSCONSTRAINTS
+found: SYSDEPENDS
+found: SYSFILES
+found: SYSFOREIGNKEYS
+found: SYSKEYS
+found: SYSPERMS
+found: SYSROLES
+found: SYSROUTINEPERMS
+found: SYSSCHEMAS
+found: SYSSEQUENCES
+found: SYSSTATEMENTS
+found: SYSSTATISTICS
+found: SYSTABLEPERMS
+found: SYSTABLES
+found: SYSTRIGGERS
+found: SYSUSERS
+found: SYSVIEWS
+found: SYSDUMMY1
+found: PROMOTION
+found: WEEKSPECIAL
+SQL Exception: Syntax error: Encountered "<EOF>" at line 1, column 83.
+check existing tables...
+found: SYSALIASES
+found: SYSCHECKS
+found: SYSCOLPERMS
+found: SYSCOLUMNS
+found: SYSCONGLOMERATES
+found: SYSCONSTRAINTS
+found: SYSDEPENDS
+found: SYSFILES
+found: SYSFOREIGNKEYS
+found: SYSKEYS
+found: SYSPERMS
+found: SYSROLES
+found: SYSROUTINEPERMS
+found: SYSSCHEMAS
+found: SYSSEQUENCES
+found: SYSSTATEMENTS
+found: SYSSTATISTICS
+found: SYSTABLEPERMS
+found: SYSTABLES
+found: SYSTRIGGERS
+found: SYSUSERS
+found: SYSVIEWS
+found: SYSDUMMY1
+found: PROMOTION
+PROMOTION needs to be deleted
+table deleted
+found: WEEKSPECIAL
+SQL Exception: Table/View 'BOOK' does not exist.
+check existing tables...
+found: SYSALIASES
+found: SYSCHECKS
+found: SYSCOLPERMS
+found: SYSCOLUMNS
+found: SYSCONGLOMERATES
+found: SYSCONSTRAINTS
+found: SYSDEPENDS
+found: SYSFILES
+found: SYSFOREIGNKEYS
+found: SYSKEYS
+found: SYSPERMS
+found: SYSROLES
+found: SYSROUTINEPERMS
+found: SYSSCHEMAS
+found: SYSSEQUENCES
+found: SYSSTATEMENTS
+found: SYSSTATISTICS
+found: SYSTABLEPERMS
+found: SYSTABLES
+found: SYSTRIGGERS
+found: SYSUSERS
+found: SYSVIEWS
+found: SYSDUMMY1
+found: PROMOTION
+found: WEEKSPECIAL
+WEEKSPECIAL needs to be deleted
+table deleted
+Exception in thread "main" java.lang.NullPointerException
+	at bookstore.BookStore.createWeekSpecialTable(BookStore.java:101)
+	at bookstore.BookStoreMain.main(BookStoreMain.java:15)
+/Users/Naomi/Library/Caches/NetBeans/8.1/executor-snippets/run.xml:53: Java returned: 1
+BUILD FAILED (total time: 0 seconds)
