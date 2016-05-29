@@ -27,14 +27,14 @@ public class ComboBoxFrame extends JFrame
     {
         //add the sample text label
         label = new JLabel("Program Design & Construction");
-        label.setFont(new Font("Serif", Font.PLAIN, DEFAULT_SIZE));
+        label.setFont(new Font("Monospaced", Font.PLAIN, DEFAULT_SIZE));
         add(label, BorderLayout.CENTER);
         
         //make a combo box and add face names
         faceCombo = new JComboBox();
+        faceCombo.addItem("Monospaced");
         faceCombo.addItem("Serif");
         faceCombo.addItem("SansSerif");
-        faceCombo.addItem("Monospaced");
         faceCombo.addItem("Dialog");
         faceCombo.addItem("DialogInput");
         
