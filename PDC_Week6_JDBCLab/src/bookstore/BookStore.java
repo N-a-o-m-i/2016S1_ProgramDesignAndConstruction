@@ -44,49 +44,77 @@ public class BookStore
         } 
     }
 
-
     public void createPromotionTable()
     {
-     /* You may need the following SQL statements for this method:
-
-      * Create the table:
-        CREATE TABLE PROMOTION (CATEGORY VARCHAR(20), DISCOUNT INT);
-
-      * Insert records into the table: 
-        INSERT INTO PROMOTION VALUES ('Fiction', 0),
-        ('Non-fiction', 10),
-        ('Textbook', 20);
-
-      */
-
+        /* You may need the following SQL statements for this method:
+         * Create the table:
+           CREATE TABLE PROMOTION (CATEGORY VARCHAR(20), DISCOUNT INT);
+         * Insert records into the table: 
+           INSERT INTO PROMOTION VALUES ('Fiction', 0),
+           ('Non-fiction', 10),
+           ('Textbook', 20);
+         */
+        try
+        {
+            String tableName = "PROMOTION";
+            
+            this.checkTableExisting(tableName);
+            
+            statement.executeUpdate("CREATE TABLE " + tableName + " (CATEGORY VARCHAR(20), DISCOUNT INT)");
+            statement.executeUpdate("INSERT INTO "  + tableName + " VALUES('Fiction', 0), ('Non-fiction', 10), ('Textbook', 20)");
+            
+        }
+        catch(SQLException e)
+        {
+            System.err.println("SQL Exception: " + e.getMessage());
+        }
     }
 
-    public ResultSet getWeekSpecial()
+    public void getWeekSpecial()
     {
-     /* You may need the following SQL statements for this method:
-
-      * Query multiple tables:
+        /* You may need the following SQL statements for this method:
+         * Query multiple tables:
+             SELECT TITLE, PRICE, DISCOUNT FROM BOOK, PROMOTION WHERE BOOK.CATEGORY=PROMOTION.CATEGORY;
+         */
+        try
+        {
+            Statement statement = conn.createStatement();
+            rs = statement.executeQuery("SELECT TITLE, PRICE, "
+                + "DISCOUNT FROM BOOK, " 
+                + "PROMOTION WHERE BOOK.CATEGORY = PROMOTION.CATEGORY");
+        }
+        catch(SQLException e)
+        {
+            System.err.println("SQL Exception: " + e.getMessage());
+        }
         
-          SELECT TITLE, PRICE, DISCOUNT FROM BOOK, PROMOTION WHERE BOOK.CATEGORY=PROMOTION.CATEGORY;
-
-      */
-
-
-        ResultSet rs=null;
-
-
-        return(rs);
-
     }
 
-    public void createWeekSpecialTable(ResultSet rs)
+    public void createWeekSpecialTable()
     {
-        try {
-            
-            
+        String tableName = "WEEKSPECIAL";
+        this.checkTableExisting(tableName);
+        
+        try 
+        {
+            statement.executeUpdate("CREATE TABLE WEEKSPECIAL (TITLE VARCHAR(40), SPECIALPRICE FLOAT)");
+            while(rs.next())
+            {
+                String title = rs.getString("TITLE");
+                double price = rs.getDouble(2);
+                double discount = rs.getInt(3);
+                double newPrice = price * (1 - (discount / 100));
+                
+                System.out.println(title + " " + newPrice);
+                String sqlState = "INSERT INTO " + tableName + " VALUES('" + title + "'," + newPrice + ")";
+                
+                System.out.println(sqlState);
+            }
             
             rs.close();
-        } catch (SQLException ex) {
+        }
+        catch (SQLException ex) 
+        {
             Logger.getLogger(BookStore.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -127,6 +155,5 @@ public class BookStore
         {
         }
     }
-
-
+    
 }
