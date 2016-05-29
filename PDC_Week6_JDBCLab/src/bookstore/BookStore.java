@@ -14,7 +14,7 @@ public class BookStore
 
     Connection conn=null;
     //String url="jdbc:derby:BookStoreDB;create=true";  
-    String url = "jdbc:derby://localhost:1527/BookStroeDB"; //url of the DB host
+    String url = "jdbc:derby://localhost:1527/BookStroeDB;create=true"; //url of the DB host
     String username="PDC";  //your DB username
     String password="PDC";   //your DB password
     Statement statement;
