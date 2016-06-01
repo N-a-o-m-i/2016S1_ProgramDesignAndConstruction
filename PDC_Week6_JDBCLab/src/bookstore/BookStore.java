@@ -27,7 +27,7 @@ public class BookStore
             conn = DriverManager.getConnection(url, username, password);
             statement = conn.createStatement();
             checkTableExisting("BOOK");
-            statement.executeUpdate("CREATE TABLE BOOK (BOOKID INT, TITLE VARCHAR(50), CATEGORY VARCHAR(20), PRICE FLOAT"); //Create BOOK table
+            statement.executeUpdate("CREATE TABLE BOOK (BOOKID INT, TITLE VARCHAR(50), CATEGORY VARCHAR(20), PRICE FLOAT)"); //Create BOOK table
             statement.executeUpdate("INSERT INTO BOOK VALUES (1,'Slum Dog Millionaire','Fiction',19.90)," //Insert Values into BOOK table
                                 + "(2,'Run Mummy Run','Fiction',28.00),"
                                 + "(3,'The Land of Painted Caves','Fiction',15.40),"
