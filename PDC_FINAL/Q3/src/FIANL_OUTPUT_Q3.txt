@@ -1,0 +1,7 @@
+run:
+Line 1: Hello, Alice
+Line 2: Good Day, Bob. It's a nice day
+Line 3: Good Day, Bob. It's a nice day
+Line 4: Hi
+Line 5: Hello, Alice
+BUILD SUCCESSFUL (total time: 0 seconds)
